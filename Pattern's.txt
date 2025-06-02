@@ -1,0 +1,457 @@
+// --  DSA Q1 find gretest divisior of two number  --
+public class demo {
+    public static void main(String[] args) {
+        int n1 = 45;
+        int n2 = 35;
+        int div = 0;
+        int small_n = 0,big_n=0;
+       if (n1>=n2) {
+            big_n = n1;
+            small_n = n2;
+       }
+       else{
+            big_n = n2;
+            small_n = n1;
+       }
+        
+         div = big_n%small_n;
+        while (div !=0 ) {
+           int rem = small_n % div;
+            small_n = div;
+            div = rem;
+            //System.out.println(small_n);
+        }
+        System.out.println(small_n);
+    }
+}
+
+// --- Q2. Find Prime Factor ---
+import java.util.*;
+
+public class demo {
+    public static boolean prim_fun(int n) { // Find Prime Or Not
+        for (int i = 2; i <= n / 2; i++) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder();
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" Enter Number ");
+        int n = sc.nextInt(); // User Input Number
+        int num = n;
+        int div = n;
+        boolean prim;
+        System.out.println(" -- Prime Factor's -- ");
+        for (int i = 2;i<=num/2; i++) {    
+            boolean flag = true;        
+            if (div % i == 0) {
+                prim = prim_fun(i);
+                while (div % i == 0 && prim) {
+                    div = n / i;
+                    n = div;
+                    System.out.print(i+" ");
+                    sb.append(i+" ");
+                    flag = false;
+                }
+                if(flag)
+                sb.append(i+" ");
+            }
+        }
+        System.out.println("\n-------------------------\n Non Prime Factor ");
+        System.out.println(sb);
+    }
+}
+
+// --- Q2. Find Prime Factor ---
+import java.util.*;
+
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number");
+        int n = sc.nextInt();
+        for (int i = 2; i <= i * i; i++) {
+            while (n % i == 0) {
+                n = n / i;
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+// Banjamin Bulaps
+
+import java.util.Scanner;
+
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter N Number");
+        int n = sc.nextInt();
+
+        boolean a[] = new boolean[n + 1];
+        for (int i = 1; i < a.length; i++) {
+            for (int j = 1; j < a.length; j++) {
+                if (j % i == 0) {
+                    if (a[j] == false )
+                        a[j] = true;
+                    else 
+                        a[j] = false;                    
+                }                
+            }
+        }
+        for (int i = 1; i < a.length; i++) {
+            System.out.println(i + " " + a[i]);
+        }
+        // Number System Perfect Squre If Odd number of Factore then 36 = 1, 2, 3, 4, 6, 9, 12, 18, 36 → 9(Odd)
+        // if Even Number : 1, 2, 3, 4, 6, 12 → total = 6(even)
+        for (int i = 1; i*i <= n; i++) {
+            System.out.println(i*i);
+        }
+    }
+}
+// -----    Patterns ------
+
+/*
+*  
+* *
+* * *
+* * * *
+* * * * *
+*/
+
+import java.util.Scanner;
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number ");
+        int n=sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <=i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+/*
+* * * * * 
+* * * *
+* * *
+* *
+*
+*/
+
+import java.util.Scanner;
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter Number ");
+        int n = sc.nextInt();
+
+       for (int i = n; i >= 0; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+       }
+    }
+}
+/*
+        * 
+      * *
+    * * *
+  * * * *
+* * * * *
+*/
+import java.util.Scanner;
+
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number ");
+        int n = sc.nextInt();
+
+        for (int i = n; i >= 1; i--) {
+            for (int j = 1; j <= n; j++) {
+                if (j<i) System.out.print("  ");
+                else System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+// * * * * * 
+//   * * * *
+//     * * *
+//       * *
+//         *
+import java.util.Scanner;
+
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" Enter a Number ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (j>=i) System.out.print("* ");
+                else System.out.print("  ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+    * 
+  * * *
+* * * * *
+  * * *
+    *
+import java.util.Scanner;
+
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc  = new Scanner(System.in);
+        System.out.println("Enter Number ");
+        int n = sc.nextInt();
+
+        int sp=n/2,st=1;
+        
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= sp; j++) {
+                System.out.print("  " );
+            }
+            for (int j = 1; j <= st ; j++) {
+                System.out.print("* ");
+            }
+            if (i<=n/2) {
+                sp--;
+                st+=2;
+            }else{
+                sp++;
+                st-=2;
+            }
+            System.out.println();
+        }
+    }
+}
+// * * *   * * * 
+// * *       * *
+// *           *
+// * *       * *
+// * * *   * * *
+
+import java.util.Scanner;
+public class temp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number ");
+        int n = sc.nextInt();
+
+        int sp=1;
+        int st = n/2+1;
+        for (int i = 1; i <= n; i++) {
+            for (int j =1; j <= st; j++) {
+                System.out.print("* ");
+            }
+            for (int j = 1; j <= sp; j++) {
+                System.out.print("  ");
+            }
+            for (int j =1; j <= st; j++) {
+                System.out.print("* ");
+            }
+            if (i<=n/2) {
+                st--;
+                sp+=2;
+            }else{
+                st++;
+                sp-=2;
+            }
+        System.out.println();
+        }
+    }
+}
+*
+  *
+    *
+      *
+        *
+import java.util.Scanner;
+
+public class temp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n ; i++) {
+            for(int j=1;j<=n;j++){
+                if (i==j) System.out.print("* ");
+                else System.out.print("  ");
+            }
+            System.out.println();
+        }
+    }
+}
+        * 
+      *
+    *
+  *
+*
+import java.util.Scanner;
+
+public class temp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = n; j >= 1; j--) {
+                if (i==j) System.out.print("* ");
+                else System.out.print("  ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+*       * 
+  *   *
+    *
+  *   *
+*       *
+import java.util.Scanner;
+
+public class temp {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (j+i == n+1 || j==i)System.out.print("* ");
+                //else if(j==i) System.out.print("* ");
+                else System.out.print("  ");
+            }
+            System.out.println();
+        }
+    }
+}
+//     * 
+//   *   *
+// *       *
+//   *   *
+//     *
+import java.util.Scanner;
+public class temp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number ");
+        int n = sc.nextInt();
+
+        int sp = n / 2, st = 1;
+        for (int i = 1; i <= n; i++) {
+            boolean flag = true;
+            for (int j = 1; j <= sp; j++)  System.out.print("  ");
+            
+            for (int j = 1; j <= st; j++) {
+                if (flag) {
+                    System.out.print("* ");
+                    flag = false;
+                }else if(j==st-1){
+                System.out.print("  ");
+                flag = true;
+                }
+                else   System.out.print("  ");
+            }
+            if (i <= n / 2) {
+                sp--;
+                st += 2;
+            } else {
+                sp++;
+                st -= 2;
+            }
+            // if (n%2==0 && i==n) {
+            //     System.out.print("* ");
+            // }
+            System.out.println();
+        }
+    }
+}
+
+1 
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number");
+         int n=sc.nextInt();
+        
+         for (int i = 1,k=1; i <= n; i++) {
+            for (int j = 1; j <= i; j++,k++) {
+                System.out.print(k+" ");
+            }
+            System.out.println();
+         }
+    }
+}
+
+0 
+1 1
+2 3 5
+8 13 21 34
+55 89 144 233 377
+import java.util.Scanner;
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number");
+        int n = sc.nextInt();
+
+        int a=0;
+        int b=1,c=0;
+        for (int i = 1; i <=n; i++) {
+            for (int j = 1; j <=i; j++) {
+                System.out.print(c+" "); //0 1 1 2 3
+                c=a+b; //0+1=1, 1+0=1,
+                b=a; // 0 1
+                a=c; //1 2
+            }
+            System.out.println();
+        }
+    }
+}
+1  
+1  1
+1  2  1
+1  3  3  1
+1  4  6  4  1
+import java.util.Scanner;
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number ");
+        int n = sc.nextInt();
+       
+     for(int i=0;i<n;i++){
+        int icj=1;
+        for (int j = 0; j <= i; j++) {
+            System.out.print(icj+"  ");
+            icj= icj*(i-j)/(j+1);
+        }
+        System.out.println();
+      }
+    
+    }
+}
