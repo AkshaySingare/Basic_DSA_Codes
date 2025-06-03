@@ -455,3 +455,95 @@ public class demo {
     
     }
 }
+    1 
+  1 2 1
+1 2 3 2 1
+  1 2 1
+    1
+import java.util.Scanner;
+public class temp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number ");
+        int n = sc.nextInt();
+
+        int sp = n / 2, st = 1,k=n/2;
+        for (int i = 1; i <= n; i++) {
+            int d=1;
+            for (int j = 1; j <= sp; j++){
+                System.out.print("  ");                
+            }
+            for (int j = 1; j <= st; j++){                
+                System.out.print(d+" ");
+                if(j<=st/2)d++;
+                else d--;
+            }
+                if (i <= n / 2) {
+                    st += 2;
+                    sp--;
+                } else {
+                    k=n/2;
+                    st -= 2;
+                    sp++;
+                }
+            System.out.println();
+        }
+    }
+}
+
+1               1 
+1 2           2 1
+1 2 3       3 2 1
+1 2 3 4   4 3 2 1 
+1 2 3 4 5 4 3 2 1
+import java.util.Scanner;
+public class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number ");
+        int n = sc.nextInt();
+        // int sp=n-2,st=1;
+        // int d=1;
+        // for (int i = 1; i <= n; i++,sp--,st++) {
+            
+        //     for (int j = 1; j <= n; j++) {
+        //         if (j <= i) {
+        //             System.out.print(d+" ");
+        //             d++;
+        //         }
+        //         else 
+        //             System.out.print("  ");
+        //     }
+        //     if(i==n) d--;
+        //    for(int j=1;j<n;j++){ 
+        //         if(j<=sp) {System.out.print("  ");}
+        //         else  {
+        //            d--; 
+        //            System.out.print(d+" ");
+        //         }
+        //    }              
+        //     System.out.println();
+        // }
+
+        int st=1,sp=n*2-3;
+        for(int i=1;i<=n;i++,st++,sp-=2){
+            int val=1;
+            for(int j=1;j<=st;j++,val++){
+                System.out.print(val+" ");
+            }
+            for(int j=1;j<=sp;j++){
+                System.out.print("  ");
+            }
+            if(i==n) {
+                st--;
+                val--;
+            }
+            for(int j=1;j<=st;j++){
+                val--;
+                System.out.print(val+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
